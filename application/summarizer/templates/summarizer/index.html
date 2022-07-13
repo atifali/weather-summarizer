@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <h1>Summarizer App</h1>
+        <p>The following is a summary of the metrics for the locations provided.</p>
+        {% if location_records %}
+        <ul>
+        {% for location in location_records %}
+            <p>{{ location.name }}</p>
+            <li>{{ location.day1metric }}</li>
+            <li>{{ location.day2metric }}</li>
+            <li>{{ location.day3metric }}</li>
+            <li>{{ location.day4metric }}</li>
+            <li>{{ location.day5metric }}</li>
+        {% endfor %}
+        </ul>
+        {% else %}
+            <p>No location records found.</p>
+        {% endif %}
+
+        <p>And here are the daily stats for the combined metrics for all locations.</p>
+        {% if daily_records %}
+        <ul>
+        {% for day in daily_records %}
+            <p>{{ day.id }}</p>
+            <li>{{ day.average }}</li>
+            <li>{{ day.median }}</li>
+            <li>{{ day.percentile25 }}</li>
+            <li>{{ day.percentile75 }}</li>
+        {% endfor %}
+        </ul>
+        {% else %}
+            <p>No daily stats found.</p>
+        {% endif %}
+
+    </body>
+</html>

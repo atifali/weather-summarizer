@@ -6,6 +6,8 @@ services:
     build:
       context: ./application
       dockerfile: Dockerfile
+    ports:
+      - 8000:8000
     depends_on:
       - rabbitmq
       - worker
@@ -22,7 +24,7 @@ services:
   flower:
     image: mher/flower:0.9.5
     environment:
-      - CELERY_BROKER_URL=pyamqp://guest@rabbitmq//
+      - CELERY_BROKER_URL=amqp://guest@rabbitmq//
       - FLOWER_PORT=5555
     ports:
       - 5555:5555
