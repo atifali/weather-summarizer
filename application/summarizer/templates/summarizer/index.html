@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html>
+    <style>
+        table, th, td {
+            border:1px solid black;
+        }
+    </style>
     <body>
 
         <h1>Summarizer App</h1>
@@ -33,6 +38,27 @@
         {% else %}
             <p>No daily stats found.</p>
         {% endif %}
+
+        <p>Same stuff in some nice tables:</p>
+        <table style="width:100%">
+            <tr>
+              <th>Location</th>
+              {% for day in days %}
+              <th>Day {{ day }}</th>
+              {% endfor %}
+            </tr>
+            
+            {% for location in location_records %}
+            <tr>
+                <td>{{ location.name }}</td>
+                <td>{{ location.day1metric }}</td>
+                <td>{{ location.day2metric }}</td>
+                <td>{{ location.day3metric }}</td>
+                <td>{{ location.day4metric }}</td>
+                <td>{{ location.day5metric }}</td>
+            </tr>
+            {% endfor %}
+          </table>
 
     </body>
 </html>

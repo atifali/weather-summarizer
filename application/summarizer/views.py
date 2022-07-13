@@ -65,5 +65,6 @@ def index(request):
     context = {
         'location_records' : location_records,
         'daily_records' : daily_records,
+        'days' : range(5)
     }
     return render(request, 'summarizer/index.html', context)
