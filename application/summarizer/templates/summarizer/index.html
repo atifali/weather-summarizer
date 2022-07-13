@@ -58,6 +58,50 @@
                 <td>{{ location.day5metric }}</td>
             </tr>
             {% endfor %}
+
+            <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <th>Average</th>
+                {% for day in daily_records %}
+                <th>{{ day.average }}</th>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>Median</th>
+                {% for day in daily_records %}
+                <th>{{ day.median }}</th>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>25th Percentile</th>
+                {% for day in daily_records %}
+                <th>{{ day.percentile25 }}</th>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>75th Percentile</th>
+                {% for day in daily_records %}
+                <th>{{ day.percentile75 }}</th>
+                {% endfor %}
+            </tr>
+            
           </table>
 
     </body>

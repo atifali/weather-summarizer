@@ -16,7 +16,7 @@ app = Celery(
 
 # this is just a dummy API key
 #  get yours here: https://openweathermap.org/
-API_KEY = 'saldnlkasdl3e23e23nklenlk2ndio2dnoi2dn20d23'
+API_KEY = 'dsjkfhkdsjhf29438yr98234hf9houdwhdfoiwho'
 
 def getDailyAverage(records):
     sum = 0 
